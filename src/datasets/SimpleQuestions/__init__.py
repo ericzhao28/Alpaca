@@ -1,1 +1,1 @@
-from . import config, download, load, preprocess
+from . import config, load, KnowledgeBase
