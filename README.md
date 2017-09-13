@@ -13,6 +13,8 @@ Abstract:
 ### Dependencies
 * Docker-CE Version 17.06.0-ce-mac19
 * Python 3.6.1
+* PyTorch 0.2.0
+* Tensorflow 1.2
 
 ### Installation
 ```
