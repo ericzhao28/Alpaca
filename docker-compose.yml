@@ -1,0 +1,16 @@
+version: '3'
+
+networks:
+
+  default:
+
+services: 
+  cluster:
+    build:
+      context: .
+      dockerfile: ./NNTPA/Dockerfile
+    volumes:
+      - ./NNTPA:/service/NNTPA
+    networks:
+      - default
+    tty: true

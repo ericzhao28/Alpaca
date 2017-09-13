@@ -1,0 +1,24 @@
+# Python files
+__pycache__/*
+venv/*
+*.pyc
+
+# Mac
+.DS_STORE
+
+# Vim files
+*.swp
+*.swo
+*~
+
+# IDE filter for .idea 
+.idea/astra.iml
+.idea/markdown-navigator.xml
+.idea/markdown-navigator/profiles_settings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
+
+# Outdated astra
+old_astra/*
