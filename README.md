@@ -6,9 +6,14 @@ Implementation of No Need to Pay Attention: using recurrent networks without att
 Paper: https://arxiv.org/pdf/1606.05029.pdf
 Paper authors: Ferhan Ture and Oliver Jojic; Comcast Labs, Washington, DC 20005
 Abstract:
-```
-"First-order factoid question answering assumes that the question can be answered by a single fact in a knowledge base (KB). While this does not seem like a challenging task, many recent attempts that apply either complex linguistic reasoning or deep neural networks achieve 65%–76% accuracy on benchmark sets. Our approach formulates the task as two machine learning problems: detecting the entities in the question, and classifying the question as one of the relation types in the KB. We train a recurrent neural network to solve each problem. On the SimpleQuestions dataset, our approach yields substantial improvements over previously published results — even neural networks based on much more complex architectures. The simplicity of our approach also has practical advantages, such as efficiency and modularity, that are valuable especially in an industry setting. In fact, we present a preliminary analysis of the performance of our model on real queries from Comcast’s X1 entertainment platform with millions of users every day."
-```
+> "First-order factoid question answering assumes that the question can be answered by a single fact in a knowledge base (KB). While 
+> this does not seem like a challenging task, many recent attempts that apply either complex linguistic reasoning or deep neural 
+> networks achieve 65%–76% accuracy on benchmark sets. Our approach formulates the task as two machine learning problems: detecting 
+> the entities in the question, and classifying the question as one of the relation types in the KB. We train a recurrent neural 
+> network to solve each problem. On the SimpleQuestions dataset, our approach yields substantial improvements over previously published 
+> results — even neural networks based on much more complex architectures. The simplicity of our approach also has practical advantages, 
+> such as efficiency and modularity, that are valuable especially in an industry setting. In fact, we present a preliminary analysis 
+> of the performance of our model on real queries from Comcast’s X1 entertainment platform with millions of users every day."
 
 ### Dependencies
 * Docker-CE Version 17.06.0-ce-mac19
