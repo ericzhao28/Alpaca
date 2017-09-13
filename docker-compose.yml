@@ -8,7 +8,7 @@ services:
   cluster:
     build:
       context: .
-      dockerfile: ./NNTPA/Dockerfile
+      dockerfile: ./NNTPA/Dockerfile_Tensorflow
     volumes:
       - ./NNTPA:/service/NNTPA
     networks:
