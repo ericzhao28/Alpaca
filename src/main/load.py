@@ -18,7 +18,8 @@ def initialize():
 
   # Load graph
   graph = graph_layer.load_graph()
-  score_entities(graph, tf_idf_model)
+  for entity in graph.entity_names:
+    score_entities(graph, tf_idf_model.score, entity)
 
   # Load local_parser
   local_parser = Parser()
