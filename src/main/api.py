@@ -1,12 +1,12 @@
 from flask import request, jsonify
 from flask.ext.api import FlaskAPI
 from flask_cors import CORS
-from . import execute
+from . import load
 
 app = FlaskAPI(__name__)
 cors = CORS(app)
 
-execute_func = execute.initialize()
+execute_func = load.initialize()
 
 
 @app.route("/demo", methods=['POST'])
