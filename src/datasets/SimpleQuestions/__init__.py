@@ -1,1 +1,1 @@
-from . import config, load, KnowledgeBase
+from . import *
