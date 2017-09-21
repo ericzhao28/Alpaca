@@ -1,2 +1,2 @@
 def clean_name(token):
-  return token.lower()
+  return token.strip().lower()
