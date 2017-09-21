@@ -8,9 +8,9 @@ services:
   cluster:
     build:
       context: .
-      dockerfile: ./NNTPA/Dockerfile_Tensorflow
+      dockerfile: ./src/Dockerfile_Tensorflow
     volumes:
-      - ./NNTPA:/service/NNTPA
+      - ./:/service
     networks:
       - default
     tty: true
