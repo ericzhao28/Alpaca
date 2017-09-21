@@ -9,7 +9,18 @@ class Graph_Layer():
   def __init__(self):
     driver = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth("neo4j", "neo4j"))
     self.session = driver.session()
-    self.entity_names = []
+
+  @property
+  def entity_names(self):
+    '''
+    Return names of all entities
+    '''
+
+    query = """
+      MATCH (n)
+      RETURN n
+    """
+    return self.session.run(query)
 
   def import_edge(self, edge):
     '''
@@ -27,8 +38,6 @@ class Graph_Layer():
       self.session.run("MERGE (n:Entity {name:'%s'})" % (name))
     else:
       self.session.run("MERGE (n:Entity {name:'%s', %s:'%s'})" % (name, key, value))
-    if name not in self.entity_names:
-      self.entity_names.append(name)
 
   def get_entity(self, entity):
     return self.session.run("MATCH (n:Entity {name:'%s'}) RETURN n" % entity)
@@ -92,6 +101,14 @@ class Graph_Layer():
   def wipe(self):
     query = """
       MATCH (n)
+      DETACH DELETE n
+    """
+    self.session.run(query)
+
+  def wipe_tests(self):
+    query = """
+      MATCH (n)
+      WHERE n.test = True
       DETACH DELETE n
     """
     self.session.run(query)
