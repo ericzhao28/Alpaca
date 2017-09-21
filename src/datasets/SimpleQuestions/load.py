@@ -7,11 +7,10 @@ def create_graph():
   with open('freebase.txt', 'r') as f:
     for line in f.readlines():
       assert(len(line.split()) == 3)
-      new_graph.add_entity(cleaning.clean_name(line[0]))
-      new_graph.add_entity(cleaning.clean_name(line[2]))
-      new_graph.add_relationship(cleaning.clean_name(line[2]), cleaning.clean_name(line[0]), cleaning.clean_name(line[1]))
+      new_graph.import_edge([cleaning.clean_name(x) for x in line])
   return new_graph
 
 
 def load_graph():
   return KnowledgeBase()
+
