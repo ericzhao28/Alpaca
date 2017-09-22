@@ -1,2 +1,5 @@
 requests
+gensim
 numpy
+pytest
+neo4j-driver
