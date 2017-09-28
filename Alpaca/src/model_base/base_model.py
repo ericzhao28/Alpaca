@@ -145,8 +145,8 @@ class Base(StandardLayers):
             self.x: test_X[:self.config.BATCH_SIZE],
             self.target: test_Y[:self.config.BATCH_SIZE]
         }
-        _, test_acc, test_loss, test_summary = self.sess.run(
-            [self.optim, self.acc, self.loss, self.summary_op],
+        test_acc, test_loss, test_summary = self.sess.run(
+            [self.acc, self.loss, self.summary_op],
             feed_dict=feed_dict)
         self.logger.info("Epoch: " + str(j) + " has test loss: " +
                          str(float(test_loss)) + " and test accuracy: " +
