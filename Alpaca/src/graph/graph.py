@@ -47,6 +47,15 @@ class Graph(DriverMedium):
     graph_logger.debug("Cypher exec: " + query)
     return self.sess.run(query)
 
+  def update_entity_property(self, node, key, value):
+    '''
+    Update an entity on the graph.
+    '''
+
+    query = "MATCH %s SET n.%s = '%s' RETURN n" % (node, key, value)
+    graph_logger.debug("Cypher exec: " + query)
+    return self.sess.run(query)
+
   def add_entity(self, node):
     '''
     Add an entity to the graph.
