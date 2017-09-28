@@ -1,2 +1,2 @@
 # Access the Docker cluster
-bash -c "clear && docker exec -it Alpaca_Astra_1 sh"
+bash -c "clear && docker exec -it alpaca_astra_1 sh"

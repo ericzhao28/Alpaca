@@ -4,8 +4,8 @@ From tensorflow/tensorflow:latest-py3
 RUN apt update
 RUN apt install gcc make libc-dev g++ bzip2 libssl-dev build-essential wget -y
 
-# Hop into /template
-WORKDIR /template
+# Hop into /Alpaca
+WORKDIR /Alpaca
 
 # Install Java 8 (Neo4j dependency)
 RUN add-apt-repository ppa:webupd8team/java
@@ -28,7 +28,7 @@ RUN echo "dbms.unmanaged_extension_classes=semantics.extension=/rdf" >> /etc/neo
 RUN wget -O /var/lib/neo4j/plugins/neosemantics-3.2.0.1-beta.jar https://github.com/jbarrasa/neosemantics/releases/download/3.2.0.1/neosemantics-3.2.0.1-beta.jar
 
 # Install Python requirements
-COPY ./template/requirements.txt ./requirements.txt
+COPY ./Alpaca/requirements.txt ./requirements.txt
 RUN export C_INCLUDE_PATH=/usr/include
 RUN pip3 install --upgrade pip
 RUN pip3 install -r ./requirements.txt
