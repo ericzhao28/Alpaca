@@ -1,0 +1,31 @@
+version: '3'
+
+networks:
+  default:
+
+services:
+  alpaca:
+    build:
+      context: .
+      dockerfile: ./Alpaca/Dockerfile
+    ports:
+      - 6006:6006
+      - 5000:5000
+      - 7687:7687
+      - 1337:1337
+      - 7474:7474
+    volumes:
+      - ./Alpaca:/Alpaca
+    networks:
+      - default
+    tty: true
+
+  astra:
+    build:
+      context: .
+      dockerfile: ./Astra/Dockerfile
+    volumes:
+      - ./Astra:/service/Astra
+    networks:
+      - default
+    tty: true

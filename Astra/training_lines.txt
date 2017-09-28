@@ -1,0 +1,3 @@
+cd /service/ParlAI; python3.6 ./examples/train_model.py -m S2S -t dialog_babi:Task:1 -mf "/tmp/model" -vme 64 -vtim 30 -vp 100 -b 32
+cd /service/ParlAI; python3.6 ./examples/train_model.py -m GlobalAttnS2S -t dialog_babi:Task:1 -mf "/tmp/model" -vme 64 -vtim 30 -vp 100 -b 32
+cd /service/ParlAI; python3.6 ./examples/train_model.py -m FixedAttnS2S -t dialog_babi:Task:1 -mf "/tmp/model" -vme 64 -vtim 30 -vp 100 -b 32

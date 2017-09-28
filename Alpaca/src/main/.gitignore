@@ -1,0 +1,5 @@
+saves/graphs/*
+!saves/graphs/.gitkeep
+
+saves/checkpoints/*
+!saves/checkpoints/.gitkeep
