@@ -8,7 +8,7 @@ from . import config
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 
 
-class Model():
+class TFIDF():
   def train(self, corpus):
     self.dictionary = Dictionary(corpus)
     self.dictionary.save(config.MODEL_DIR + config.DICT_SAVE)
