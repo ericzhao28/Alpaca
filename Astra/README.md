@@ -36,16 +36,17 @@ Model deployment and the entire training pipeline are deployed as Docker Compose
 ```
 docker-compose up --build
 bash access_cluster.sh
-cd /service/parlai/parlai/agents
+cd /service/ParlAI/parlai/agents
 ln -sf ../../../Astra/RecurrentS2S_Vanilla ./S2S
-cd /service/parlai/
+cd /service/ParlAI/
 pip install -e .
 ```
 
 ### Usage
+Go:
 ```
-cd /service/parlai/
-python examples/train_model.py -m S2S -t dialog_babi:Task:1 -mf "/tmp/model" -vme 64 -vtim 30 -vp 100 -b 32
+cd /service/ParlAI/
+python3.6 examples/train_model.py -m S2S -t dialog_babi:Task:1 -mf "/tmp/model" -vme 64 -vtim 30 -vp 100 -b 32
 ```
 
 ### Maintenance 

@@ -1,7 +1,7 @@
 # Alpaca
 This is Eric's gigantic Hive project.
 
-[![Maintenance Intended](http://maintained.tech/badge.svg)](http://maintained.tech/)
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
 ## Overview
 Eric's work is under Alpaca.
@@ -10,38 +10,6 @@ The intern's team work is under Astra.
 ### Requirements
 * Docker-CE version 17.06.2-ce
 * Docker Compose version 1.14.0
-
-### Getting Started
-To install, hop into Docker and install the necessary datasets.
-```
-docker-compose up --build
-```
-
-Now hop into Docker and download some files.
-```
-cd Alpaca
-bash access_Alpaca.sh
-```
-
-Now you should be inside the Alpaca container.
-```
-service neo4j start
-python3 -m Alpaca.datasets.generic_double_seq.download
-python3 -m Alpaca.datasets.generic_flat.download
-python3 -m Alpaca.datasets.generic_sequential.download
-```
-
-Go into Neo4j by visting 0.0.0.0:7474 on your local browser.
-Run the following queries: 
-```
-CREATE INDEX ON :Resource(uri)
-CALL semantics.importRDF('file:///Alpaca/datasets/apple.owl','RDF/XML', {})
-```
-
-Now run unit tests to make sure everything is awesome.
-```
-py.test Alpaca/tests
-```
 
 ### Contribute
 I appreciate all contributions. Just make a pull request.
