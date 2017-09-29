@@ -16,6 +16,10 @@ def load(spec):
       with open(config.DUMPS_DIR + config.PROCESSED_REL_SAVE_NAME, "rb") as f:
         set_logger.info("Dataset rel exists. Attempting pickle load...")
         return pickle.load(f)
+    if spec == "seq":
+      with open(config.DUMPS_DIR + config.PROCESSED_SEQ_SAVE_NAME, "rb") as f:
+        set_logger.info("Dataset seq exists. Attempting pickle load...")
+        return pickle.load(f)
 
   except (EOFError, OSError, IOError) as e:
     set_logger.info("Dataset does not exist. Returning None.")

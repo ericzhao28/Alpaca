@@ -31,6 +31,7 @@ def load_data(file_path):
     return " ".join([__clean_string(m) for m in message])
 
   X = []
+  Y = []
   Y_ent = []
   Y_rel = []
   with open(file_path, 'r') as f:
@@ -41,9 +42,9 @@ def load_data(file_path):
       convo = []
       for post in parsed['reply_list']:
         convo.append(post['replier_description'])
-      Y_rel.append(Y_rel.append(parsed['question_breadcrumb']))
-      Y_ent.append([__parse_message(message) for message in convo])  # Placeholder, this is broken
+      Y_rel.append(Y_rel.append(parsed['question_breadcrumb']))  # Placeholder, this is broken
+      Y.append([__parse_message(message) for message in convo])
 
   set_logger.debug("Basic data loading complete.")
-  return np.array(X), np.array(Y_ent), np.array(Y_rel)
+  return np.array(X), np.array(Y), np.array(Y_ent), np.array(Y_rel)
 
