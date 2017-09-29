@@ -1,19 +1,13 @@
 # Alpaca
-This is Eric's gigantic Hive project.
+Eric's Hive project for seq2seq models, memory augmented networks, and other prototypes for natural language generation models.
 
 [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
 ## Overview
-Eric's work is under Alpaca.
-The intern's team work is under Astra.
 
 ### Requirements
 * Docker-CE version 17.06.2-ce
 * Docker Compose version 1.14.0
-
-### Contribute
-I appreciate all contributions. Just make a pull request.
-Contributors are listed under `contributors.txt`.
 
 ## License
 MIT License
