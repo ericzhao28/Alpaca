@@ -1,11 +1,10 @@
 from ..models import EntModel, RelModel
 from ..tf_idf import TFIDF
-from ..graph.load import create_graph
+from ..graph.load import load_graph
 from . import rel_config, ent_config
 from .logger import train_logger
 
-from ...datasets import simple_questions
-from ...datasets import freebase
+from ...datasets import apple_support
 
 from neo4j.v1 import GraphDatabase
 import tensorflow as tf
@@ -16,7 +15,7 @@ def train():
   with driver.session() as neo4j_sess:
     with tf.Session() as tf_sess:
       # Create graph
-      graph = create_graph(neo4j_sess, freebase.load())
+      graph = load_graph(neo4j_sess)
 
       # Train tf_idf
       tf_idf_model = TFIDF()
@@ -24,7 +23,7 @@ def train():
 
       # Train ent_model
       ent_model = EntModel(tf_sess, ent_config, train_logger)
-      X, Y = simple_questions.load()
+      X, Y = apple_support.load('ent')
       shuffled_dataset = ent_model.shuffle_and_partition(X, Y, 20, 20)
       del(X)
       del(Y)
@@ -40,7 +39,7 @@ def train():
 
       # Train rel model
       rel_model = RelModel(tf_sess, rel_config, train_logger)
-      X, Y = simple_questions.load()
+      X, Y = apple_support.load('rel')
       shuffled_dataset = rel_model.shuffle_and_partition(X, Y, 20, 20)
       del(X)
       del(Y)

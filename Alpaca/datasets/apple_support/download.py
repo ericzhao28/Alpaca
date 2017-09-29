@@ -18,9 +18,13 @@ def main():
 
   except (EOFError, OSError, IOError) as e:
     set_logger.info("No dataset yet. Creating and writing new dataset...")
-    with open(config.DUMPS_DIR + config.PROCESSED_SAVE_NAME, 'wb') as f:
-      pickle.dump(preprocess_file(config.DUMPS_DIR + config.RAW_SAVE_NAME), f)
-      set_logger.info("Dataset pickle loaded and dumped.")
+    X, ent, rel = preprocess_file(config.DUMPS_DIR + config.RAW_SAVE_NAME)
+    with open(config.DUMPS_DIR + config.PROCESSED_REL_SAVE_NAME, 'wb') as f:
+      pickle.dump((X, rel), f)
+      set_logger.info("Dataset rel pickle loaded and dumped.")
+    with open(config.DUMPS_DIR + config.PROCESSED_ENT_SAVE_NAME, 'wb') as f:
+      pickle.dump((X, ent), f)
+      set_logger.info("Dataset rel pickle loaded and dumped.")
 
   return None
 

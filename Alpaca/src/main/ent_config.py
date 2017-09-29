@@ -9,6 +9,7 @@ CHECKPOINTS_DIR = SAVES_DIR + "checkpoints/"
 ITERATIONS = 32
 BATCH_SIZE = 20
 EMB_DIM = 300
+EMB_PATH = os.path.dirname(os.path.realpath(__file__)) + "/glove.vector"
 N_STEPS = 10
 LAYERS = {
     'h_seq_int': 11,

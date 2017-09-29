@@ -31,14 +31,19 @@ def load_data(file_path):
     return " ".join([__clean_string(m) for m in message])
 
   X = []
+  Y_ent = []
+  Y_rel = []
   with open(file_path, 'r') as f:
     set_logger.debug("Opened dataset json...")
     for line in f.readlines():
       parsed = json.loads(line)
-      convo = [parsed['question_description']]
+      X.append(__parse_message(parsed['question_description']))
+      convo = []
       for post in parsed['reply_list']:
         convo.append(post['replier_description'])
-      X.append([__parse_message(message) for message in convo])
+      Y_rel.append(Y_rel.append(parsed['question_breadcrumb']))
+      Y_ent.append([__parse_message(message) for message in convo])  # Placeholder, this is broken
+
   set_logger.debug("Basic data loading complete.")
-  return np.array(X)
+  return np.array(X), np.array(Y_ent), np.array(Y_rel)
 
