@@ -4,6 +4,12 @@ Eric's Hive project for seq2seq models, memory augmented networks, and other pro
 [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
 ## Overview
+### Apple OWL imports
+```
+CREATE INDEX ON :Resource(uri)
+CALL semantics.importRDF('file:///Alpaca/datasets/apple_ontology/apple.owl','RDF/XML', {})
+
+```
 
 ### Requirements
 * Docker-CE version 17.06.2-ce
