@@ -1,7 +1,0 @@
-chocolate is good
-hugs is good
-people is bad
-good not bad
-bad not good
-hugs not bad
-chocolate not bad
