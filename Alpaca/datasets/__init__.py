@@ -1,3 +1,3 @@
 from . import utils
-from . import generic_sequential, generic_double_seq, generic_flat, simple_questions, freebase
+from . import generic_sequential, generic_double_seq, generic_flat, apple_support
 
