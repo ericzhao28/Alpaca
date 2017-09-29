@@ -18,6 +18,6 @@ def score_entities(graph, tf_idf_scorer, entity_texts):
   '''
   for entity_text in entity_texts:
     for alt in build_alts(entity_text):
-      graph.update_entity_property(
+      graph.add_entity_property(
           graph.build_node(alt), "tfidf", tf_idf_scorer(alt, entity_text))
 

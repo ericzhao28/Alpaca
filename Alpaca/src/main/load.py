@@ -1,4 +1,5 @@
-from ..models import EntModel, RelModel, TFIDF
+from ..models import EntModel, RelModel
+from ..tf_idf import TFIDF
 from ..graph.load import load_graph
 from . import rel_config, ent_config
 from .logic import score_entities, build_candidate_entities
@@ -62,7 +63,7 @@ def initialize_func(tf_sess, neo4j_sess, logger):
       if score == 1:
         entity_text += " " + query[i]
     entity_text = entity_text.strip()
-    entity_candidates = build_candidate_entities(graph.get_entity, entity_text)
+    entity_candidates = build_candidate_entities(graph, entity_text)
 
     # Candidate answers
     answers = []
