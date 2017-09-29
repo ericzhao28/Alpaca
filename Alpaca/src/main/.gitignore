@@ -1,0 +1,8 @@
+saves/graphs/train/*
+!saves/graphs/train/.gitkeep
+
+saves/graphs/test/*
+!saves/graphs/test/.gitkeep
+
+saves/checkpoints/*
+!saves/checkpoints/.gitkeep
